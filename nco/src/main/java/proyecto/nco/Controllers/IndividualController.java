@@ -29,31 +29,26 @@ public class IndividualController {
     this.individualServiceImpl = individualServiceImpl;
   }
 
-  // anda bien
   @GetMapping("/lista")
   List<Individual> findAll() {
     return individualServiceImpl.findAll();
   }
 
-  // esto también anda
   @PostMapping("/nuevo")
   Individual newIndividual(@RequestBody Individual newIndividual) {
     return individualServiceImpl.newIndividual(newIndividual);
   }
 
-  // anda bien
   @GetMapping("/buscar/{id}")
   Individual one(@PathVariable Long id) {
     return individualServiceImpl.one(id);
   }
 
-  // si servía
   @PutMapping("/reemplazar/{id}")
   Individual replaceIndividual(@RequestBody Individual newIndividual, @PathVariable Long id) {
 return individualServiceImpl.replaceIndividual(newIndividual, id);
   }
 
-  // una maravilla
   @DeleteMapping("/borrar/{id}")
   void deleteEmployee(@PathVariable Long id) {
     individualServiceImpl.deleteEmployee(id);
